@@ -1,0 +1,32 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-core-mediastreamtrack",
+  "description": "A MediaStreamTrack component wrapper with device source management.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "polymer",
+    "core",
+    "mediastreamtrack",
+    "device sources",
+    "web-components"
+  ],
+  "main": "ph-core-mediastreamtrack.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/silentHoo/ph-core-mediastreamtrack",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "e35d1672fd3f69595f34469bd8f6078a4f2ee270"
+  },
+  "_source": "git://github.com/silentHoo/ph-core-mediastreamtrack.git",
+  "_target": "^0.1.0",
+  "_originalSource": "silentHoo/ph-core-mediastreamtrack"
+}

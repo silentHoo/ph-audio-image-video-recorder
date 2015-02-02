@@ -1,0 +1,25 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-core-video",
+  "description": "This component gives basic functionality to record from a given getUserMedia stream.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "polymer",
+    "core",
+    "video",
+    "record video",
+    "getusermedia",
+    "web-components"
+  ],
+  "main": "ph-core-video.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0",
+    "ph-core-image": "silentHoo/ph-core-image#^0.1.0",
+    "whammy": "https://github.com/antimatter15/whammy.git#ea91215a4bcce68030fdbc1201d5bb267b27c4e4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  }
+}

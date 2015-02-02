@@ -1,0 +1,33 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-core-image",
+  "description": "An image component wrapper with image capture functionality.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "image",
+    "polymer",
+    "core",
+    "capture",
+    "image capture",
+    "web-components"
+  ],
+  "main": "ph-core-image.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/silentHoo/ph-core-image",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "fb17b27208126c1dfa76f6c77327746da9023fe4"
+  },
+  "_source": "git://github.com/silentHoo/ph-core-image.git",
+  "_target": "^0.1.0",
+  "_originalSource": "silentHoo/ph-core-image"
+}

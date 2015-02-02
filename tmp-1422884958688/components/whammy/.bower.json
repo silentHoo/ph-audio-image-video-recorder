@@ -1,0 +1,33 @@
+{
+  "name": "whammy",
+  "repository": "antimatter15/whammy",
+  "description": "Real-time Javascript Video Encoder",
+  "keywords": [
+    "video",
+    "encoding",
+    "vp8",
+    "webm",
+    "ebml",
+    "riff",
+    "webp",
+    "codec",
+    "browser",
+    "chrome"
+  ],
+  "templates": [
+    "clock.html"
+  ],
+  "scripts": [
+    "whammy.js"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/antimatter15/whammy",
+  "_release": "ea91215a4b",
+  "_resolution": {
+    "type": "commit",
+    "commit": "ea91215a4bcce68030fdbc1201d5bb267b27c4e4"
+  },
+  "_source": "https://github.com/antimatter15/whammy.git",
+  "_target": "ea91215a4bcce68030fdbc1201d5bb267b27c4e4",
+  "_originalSource": "https://github.com/antimatter15/whammy.git"
+}

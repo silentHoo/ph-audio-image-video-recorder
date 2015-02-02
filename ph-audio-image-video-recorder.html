@@ -478,15 +478,15 @@ Example 3:
         _browserSupported: function() {
           switch (this.mode) {
             case 'image':
-              var c = new phCoreImage();
+              var c = new PhCoreImage();
               return c.isSupported();
               break;
             case 'video':
-              var c = new phCoreVideo();
+              var c = new PhCoreVideo();
               return c.isSupported();
               break;
             case 'audio':
-              var c = new phCoreAudio();
+              var c = new PhCoreAudio();
               return c.isSupported();
               break;
             default:
@@ -521,7 +521,7 @@ Example 3:
 
             // init image component
             if (this.mode == 'image') {
-              this._imageComponent = new phCoreImage();
+              this._imageComponent = new PhCoreImage();
               this._imageComponent.init(this._id('#liveVideo'), this._videoDim.width, this._videoDim.height);
             }
 
@@ -533,7 +533,7 @@ Example 3:
 
             // init video component
             if (this.mode == 'video') {
-              this._videoComponent = new phCoreVideo();
+              this._videoComponent = new PhCoreVideo();
               this._videoComponent.init(this._id('#liveVideo'), this._videoDim.width, this._videoDim.height);
             }
           });
@@ -545,7 +545,7 @@ Example 3:
           this.async(function () {
             // get device sources
             try {
-              var mst = new phCoreMediaStreamTrack();
+              var mst = new PhCoreMediaStreamTrack();
               mst.getDevices(this._onDevicesReady.bind(this));
             } catch (e) {
               console.error(e);
@@ -601,7 +601,7 @@ Example 3:
             }
           };
 
-          var umc = new phCoreUserMedia();
+          var umc = new PhCoreUserMedia();
           umc.init(usermediaConfig, this._onUserMediaSuccess.bind(this), this._onUserMediaError.bind(this));
         },
 

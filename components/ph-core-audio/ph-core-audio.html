@@ -11,7 +11,7 @@ Recorder developed by Matt Diamond (Recorder.js).
 
 This component gives basic functionality to record from a given `getUserMedia` stream and visualize the audio frequency
 with vertical bars. It's possible to adjust the gain level of the stream node. The visualizer will expand to the whole
-parent height and width and will show 32 frequency bars updated every 50ms.
+parent height and width and will show 32 frequency bars.
 
 @group Core Elements
 @element ph-core-audio
@@ -39,7 +39,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 -->
 <script src="../Recorderjs/recorder.js"></script>
 
-<polymer-element name="ph-core-audio" constructor="PhCoreAudio" attributes="visualizeAudio initialGain gain barSpacing">
+<polymer-element name="ph-core-audio" constructor="PhCoreAudio" attributes="visualizeAudio initialGain gain barSpacing recorderWorkerFile">
   <template>
     <link rel="stylesheet" href="ph-core-audio.css">
 
@@ -87,7 +87,18 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
            * @type Integer
            * @default 2
            */
-          barSpacing: 2
+          barSpacing: 2,
+          
+          
+          /**
+           * The filepath of the recorderworker of Recorder.js. Depends on your bower configuration and is needed to
+           * use webworkers.
+           *
+           * @attribute recorderWorkerFile
+           * @type String
+           * @default '../components/Recorderjs/recorderWorker.js'
+           */
+          recorderWorkerFile: '../components/Recorderjs/recorderWorker.js'
         },
 
 
@@ -220,7 +231,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 
           // *** Recording ***
           this._audioRecorder = new Recorder(this._volumeFullNode, {
-            workerPath: '/bower_components/Recorderjs/recorderWorker.js'
+            workerPath: this.recorderWorkerFile
           });
 
           // *** Wiring all together ***
@@ -263,17 +274,11 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 
               function update() {
                 requestAnimationFrame(update);
-
-                // update only every 50ms
-                var currentTime = Date.now();
-                if (currentTime - lastTime > 50) {
-                  lastTime = currentTime;
                   analyser.getByteFrequencyData(frequencyData);
 
                   bars.forEach(function (bar, index) {
                     bar.style.height = frequencyData[index] + 'px';
                   });
-                }
               };
 
               update();

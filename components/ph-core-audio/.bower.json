@@ -16,7 +16,8 @@
   "main": "ph-core-audio.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.2",
-    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0",
+    "Recorderjs": "https://github.com/mattdiamond/Recorderjs.git#ac0eb8a7c2601fc4ec1cbd1b1ee49f45a6c79580"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.0.0"
@@ -26,7 +27,7 @@
   "_resolution": {
     "type": "version",
     "tag": "v0.1.0",
-    "commit": "5d80694aa62a85baf329a73556c878dfe82a2073"
+    "commit": "9ee47d2a7627be2d40752b4427a715cb73a0158f"
   },
   "_source": "git://github.com/silentHoo/ph-core-audio.git",
   "_target": "^0.1.0",

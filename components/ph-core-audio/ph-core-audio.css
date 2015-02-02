@@ -9,7 +9,6 @@
 }
 
   #audioVisualizer > div {
-    transition: height 50ms linear 0s;
     float: left;
     background-color: #03a9f4;
     bottom: 0px;

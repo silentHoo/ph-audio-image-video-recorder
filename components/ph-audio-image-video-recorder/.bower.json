@@ -36,11 +36,11 @@
     "web-component-tester": "Polymer/web-component-tester#^2.0.0"
   },
   "homepage": "https://github.com/silentHoo/ph-audio-image-video-recorder",
-  "_release": "463bfaa8b0",
+  "_release": "7bcff0255b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "463bfaa8b037160c5b6ef3dabdf46848df16baac"
+    "commit": "7bcff0255b258524803c1796d5a25070424819ad"
   },
   "_source": "git://github.com/silentHoo/ph-audio-image-video-recorder.git",
   "_target": "master",

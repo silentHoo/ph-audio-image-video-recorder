@@ -1,0 +1,22 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-polymer-mixins",
+  "description": "A mixin pool for several Polymer web components.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "mixins",
+    "polymer",
+    "web-components"
+  ],
+  "homepage": "https://github.com/silentHoo/ph-polymer-mixins",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "7490a5a8de993441c9e251daf81d3de169a081e0"
+  },
+  "_source": "git://github.com/silentHoo/ph-polymer-mixins.git",
+  "_target": "^0.1.0",
+  "_originalSource": "silentHoo/ph-polymer-mixins"
+}

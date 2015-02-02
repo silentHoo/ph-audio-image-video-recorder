@@ -1,0 +1,12 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-polymer-mixins",
+  "description": "A mixin pool for several Polymer web components.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "mixins",
+    "polymer",
+    "web-components"
+  ]
+}

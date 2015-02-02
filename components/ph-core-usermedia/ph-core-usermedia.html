@@ -1,0 +1,103 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- mixins for shared functionality -->
+<link rel="import" href="../ph-polymer-mixins/mixins-core.html">
+
+<!--
+This component is a wrapper around the GetUserMedia/Stream API.
+
+@group Core Elements
+@element ph-core-usermedia
+@homepage https://silenthoo.github.io/ph-core-usermedia
+@demo https://silenthoo.github.io/ph-core-usermedia/demo.html
+-->
+<polymer-element name="ph-core-usermedia" constructor="PhCoreUserMedia" attributes="">
+  <script>
+    (function () {
+      Polymer(Polymer.mixin({
+
+        _stream: null,    // the stream object, returned by the GetUserMedia API
+
+        // the GetUserMedia configuration object
+        _config: {
+          enabled: {
+            // bool flags if enabled
+            audio: true,
+            video: true
+          },
+          audio: {},      // the audio config
+          video: {}       // the video config
+        },
+
+        /**
+         * Returns `true` if the `Web Audio API` is supported by the current used browser. False otherwise.
+         *
+         * @return {boolean} true if the browser is supported, false otherwise.
+         */
+        isSupported: function() {
+          return (navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia || navigator.msGetUserMedia);
+        },
+
+        /**
+         * Initializes the component with the given configuration object. The configuration is just wrapped into the
+         * getUserMedia context. So https://developer.mozilla.org/en-US/docs/NavigatorUserMedia.getUserMedia can be
+         * referenced.
+         *
+         * Example of a config object:
+         *
+         * _config: {
+         *  enabled: {
+         *    audio: true,
+         *    video: false
+         *  },
+         *  audio: {
+         *    // GetUserMedia audio constraint
+         *  },
+         *  video: {
+         *    // GetUserMedia video constraint
+         *  }
+         * }
+         *
+         * @param {object} config The configuration of the audio and video.
+         * @param {function} successCallback The success callback as provided by GetUserMedia (see the above link)
+         * @param {function} errorCallback The error callback as provided by GetUserMedia (see the above link)
+         */
+        init: function(config, successCallback, errorCallback) {
+          if (!this.isSupported()) {
+            console.error('Sorry, your current browser does not support the MediaStreamTrack API :(');
+          }
+
+          this._config = config;
+
+          navigator.getUserMedia = (
+            navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia
+          );
+
+          if (!navigator.getUserMedia) {
+            console.log('getUserMedia API is NOT supported in your browser :(');
+          }
+
+          // see https://developer.mozilla.org/en-US/docs/NavigatorUserMedia.getUserMedia
+          navigator.getUserMedia (
+
+            // constraints
+            {
+              audio: this._config.enabled.audio ? this._config.audio : false,
+              video: this._config.enabled.video ? this._config.video : false
+            },
+
+            // successCallback
+            successCallback,
+
+            // errorCallback
+            errorCallback
+          );
+        }
+      }, mixinsCore));
+    })();
+  </script>
+</polymer-element>

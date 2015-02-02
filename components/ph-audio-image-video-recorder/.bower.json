@@ -1,0 +1,49 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-audio-image-video-recorder",
+  "description": "An audio, image and video component recorder.",
+  "license": "BSD",
+  "keywords": [
+    "audio",
+    "image",
+    "video",
+    "polymer",
+    "core",
+    "recorder",
+    "audio recording",
+    "video recording",
+    "image capturing",
+    "record audio",
+    "record image",
+    "record video",
+    "usermedia",
+    "mediastreamtrack",
+    "stream",
+    "web-components"
+  ],
+  "main": "ph-audio-image-video-recorder.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "core-icons": "Polymer/core-icons#^0.5",
+    "ph-core-audio": "silentHoo/ph-core-audio#^0.1.0",
+    "ph-core-image": "silentHoo/ph-core-image#^0.1.0",
+    "ph-core-video": "silentHoo/ph-core-video#^0.1.0",
+    "ph-core-usermedia": "silentHoo/ph-core-usermedia#^0.1.0",
+    "ph-core-mediastreamtrack": "silentHoo/ph-core-mediastreamtrack#^0.1.0",
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/silentHoo/ph-audio-image-video-recorder",
+  "_release": "463bfaa8b0",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "463bfaa8b037160c5b6ef3dabdf46848df16baac"
+  },
+  "_source": "git://github.com/silentHoo/ph-audio-image-video-recorder.git",
+  "_target": "master",
+  "_originalSource": "silentHoo/ph-audio-image-video-recorder",
+  "_direct": true
+}

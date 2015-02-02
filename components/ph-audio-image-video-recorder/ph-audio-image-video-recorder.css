@@ -1,0 +1,91 @@
+:host {
+  display: block; }
+
+/* see http://css-tricks.com/snippets/css/keyframe-animation-syntax */
+@-webkit-keyframes pulsateOpacity {
+  0% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0.1; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes pulsateOpacity {
+  0% {
+    opacity: 1; }
+
+  50% {
+    opacity: 0.1; }
+
+  100% {
+    opacity: 1; } }
+
+.spaceToTop {
+  margin-top: 1rem; }
+
+#videoContainer.video, #videoContainer.image {
+  width: 640px;
+  height: 480px;
+  border: 1px grey dashed; }
+
+#videoContainer.audio {
+  width: 640px;
+  height: 240px;
+  border: 1px grey dashed; }
+  #videoContainer.audio ph-core-audio {
+    height: inherit; }
+
+#liveVideo {
+  width: 640px;
+  height: 480px; }
+
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
+.sepia {
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -ms-filter: sepia(1);
+  filter: sepia(1); }
+
+.invert {
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  -ms-filter: invert(100%);
+  filter: invert(100%); }
+
+.brightness {
+  -webkit-filter: brightness(150%);
+  -moz-filter: brightness(150%);
+  -ms-filter: brightness(150%);
+  filter: brightness(150%); }
+
+.blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px); }
+
+#recordButton > core-icon {
+  color: red; }
+
+.pulsate {
+  -webkit-animation: pulsateOpacity 2s infinite linear;
+          animation: pulsateOpacity 2s infinite linear;
+  /*-webkit-animation: recordPulsate 2s infinite linear;*/ }
+
+paper-button > div {
+  margin-left: 0.5rem; }
+
+#progressLine {
+  margin-top: -3px;
+  width: 0%;
+  height: 5px;
+  background-color: #03a9f4;
+  transition: width 250ms linear 0ms;
+  /* 250ms is the redraw interval, so the progress is smooth */ }

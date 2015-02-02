@@ -1,0 +1,43 @@
+<script>
+  /**
+   * These object gives a core component shared functionality to use and maintain in a central file.
+   *
+   * Please refer to https://www.polymer-project.org/docs/polymer/helpers.html#using-mixins for more information.
+   */
+  var mixinsHelper = {
+    /**
+     * Short helper method to query the shadowRoot DOM, this is necessary to do if you want to grab an element
+     * which is inside of multiple <template> elements. Only the outer elements with ids are grabbable with
+     * polymers automatic node finding mechanism. For all others use this function.
+     *
+     * @param {String} A valid CSS selector.
+     * @return {NodeList} The nodelist.
+     */
+    _select: function(selector) {
+      return this.shadowRoot.querySelectorAll(selector);
+    },
+
+    /**
+     * Will return a single element that matches the given CSS selector.
+     *
+     * @param {String} idSelector A valid CSS selector.
+     * @return {HTMLElement} An element that matches.
+     */
+    _id: function(idSelector) {
+      return this.shadowRoot.querySelector(idSelector);
+    },
+
+    /**
+     * Provides the with of a given element.
+     *
+     * @param {String|Node} selectorOrElement A valid CSS selector or a DOM element reference.
+     * @return {Integer} The clientWidth in pixels.
+     */
+    _widthOf: function(selectorOrElement) {
+      if (typeof selectorOrElement == 'String') {
+        return this._select(selectorOrElement).clientWidth;
+      }
+      return selectorOrElement.clientWidth;
+    }
+  };
+</script>

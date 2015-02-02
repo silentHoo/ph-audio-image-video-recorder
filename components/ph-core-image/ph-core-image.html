@@ -1,0 +1,84 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!-- mixins for shared functionality -->
+<link rel="import" href="../ph-polymer-mixins/mixins-core.html">
+
+<!--
+This component gives basic functionality to produce images in jpeg, webp or png. This is the result of the
+`HTMLCanvasElement` provided `.toDataURL()` method. The method returns a data-URL containing a representation
+of the image in the format specified by the type parameter. The returned image is in a resolution of 96dpi. So the
+produced image could be inserted into a `<img>` element or further proceeded.
+
+@group Core Elements
+@element ph-core-image
+@homepage https://silenthoo.github.io/ph-core-image
+@demo https://silenthoo.github.io/ph-core-image/demo.html
+-->
+
+<polymer-element name="ph-core-image" constructor="PhCoreImage" attributes="">
+  <script>
+    (function () {
+      Polymer(Polymer.mixin({
+        _width: 0,                                  // the width of the resulting image
+        _height: 0,                                 // the height of the resulting image
+        _videoEl: null,                             // HTMLImageElement, HTMLVideoElement or HTMLCanvasElement
+        _canvas: document.createElement('canvas'),  // the canvas object
+
+        /**
+         * Returns `true` if this components used Web APIs are supported by the current used browser. False otherwise.
+         *
+         * @return {boolean} true if the browser is supported, false otherwise.
+         */
+        isSupported: function() {
+          return !!window.HTMLCanvasElement;
+        },
+
+        /**
+         * Initializes the component.
+         *
+         * @param videoEl The image source (HTMLImageElement, HTMLVideoElement or HTMLCanvasElement).
+         * @param width The resulting image width.
+         * @param height The resulting image height.
+         */
+        init: function(videoEl, width, height) {
+          this._videoEl = videoEl;
+          this._canvas.width = width * 2;
+          this._canvas.height = height * 2;
+        },
+
+        /**
+         * Returns the image from the given source as jpeg, webp or png in the requested quality.
+         *
+         * @param type The type of the image ('image/jpeg', 'image/webp', 'image/png')
+         * @param quality The quality between 0.0 and 1.0. 1.0 is best.
+         * @return {boolean|data URI} False if the provided parameters are wrong or the data URI containing the image.
+         */
+        getPictureDataURL: function(type, quality) {
+          var typeCheck = (type == 'image/jpeg' || type == 'image/webp' || type == 'image/png');
+          var qualityCheck = (quality >= 0.0 && quality <= 1.0);
+
+          if (!typeCheck || !qualityCheck) {
+            return false;
+          }
+
+          this._drawImage();
+          return this._canvas.toDataURL(type, quality);
+        },
+
+        // ===== private methods =====
+
+        // draws the source image into the 2d canvas context
+        _drawImage: function() {
+          this._canvas.getContext('2d').drawImage(
+            this._videoEl,
+            0,
+            0,
+            this._canvas.width,
+            this._canvas.height
+          );
+        }
+      }, mixinsCore));
+
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,18 @@
+<script>
+  /**
+   * These object gives a core component shared functionality to use and maintain in a central file.
+   *
+   * Please refer to https://www.polymer-project.org/docs/polymer/helpers.html#using-mixins for more information.
+   */
+  var mixinsCore = {
+    /**
+     * A CoreException which a core component throws if something bad happens
+     *
+     * @param {string} message The message provided by the exception.
+     */
+    CoreException: function(message) {
+      this.message = message;
+      this.name = "CoreException";
+    }
+  };
+</script>

@@ -1,0 +1,74 @@
+<script>
+  /**
+   * These object gives a recording component shared functionality to use and maintain in a central file.
+   *
+   * The methods only set a state which should be observed by the Polymer components changedWatcher to determine
+   * if a recording was started, stopped or is idling.
+   *
+   * Please refer to https://www.polymer-project.org/docs/polymer/helpers.html#using-mixins for more information.
+   */
+  var mixinsAudioVideo = {
+
+    _duration: -1,    // the duration of the recording
+    _startTime: -1,   // the start timestamp
+    _stopTime: -1,    // the stop timestamp
+
+    _stateEnum: {     // the states
+      IDLE: 0,
+      RECORDING: 1,
+      STOPPED: 2
+    },
+    _state: 0,        // the current state
+
+    /**
+     * Sets the current state to RECORDING.
+     *
+     * @return {boolean} True if the recording is started, false if there's another recording active.
+     */
+    startRecord: function() {
+      if (this._state == this._stateEnum.RECORDING) {
+        return false;
+      }
+
+      this._startTime = Date.now();
+      this._state = this._stateEnum.RECORDING;
+      return true;
+    },
+
+    /**
+     * Sets the current state to STOPPED.
+     *
+     * @return {boolean} True if the recording is stopped, false if there was no recording started before.
+     */
+    stopRecord: function() {
+      if (this._state != this._stateEnum.RECORDING) {
+        return false;
+      }
+
+      this._stopTime = Date.now();
+      this._duration = this._stopTime - this._startTime;
+      this._state = this._stateEnum.STOPPED;
+      return true;
+    },
+
+    /**
+     * Returns the duration in milliseconds for an active recording (if the state is RECORDING) or an already
+     * STOPPED recording. Returns -1 if there was never a recording started.
+     *
+     * @return {Integer} -1 if no recording was ever active, otherwise the duration the recording took.
+     */
+    getDuration: function() {
+      if (this._state == this._stateEnum.IDLE) {
+        return -1;
+      }
+
+      if (this._state == this._stateEnum.RECORDING) {
+        return (Date.now() - this._startTime);
+      }
+
+      if (this._state == this._stateEnum.STOPPED) {
+        return this._duration;
+      }
+    }
+  };
+</script>

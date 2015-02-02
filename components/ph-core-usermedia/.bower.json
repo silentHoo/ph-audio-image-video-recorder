@@ -1,0 +1,33 @@
+{
+  "author": "Patrick Hillert",
+  "name": "ph-core-usermedia",
+  "description": "This component is a wrapper around the GetUserMedia/Stream API.",
+  "version": "0.1.0",
+  "license": "BSD",
+  "keywords": [
+    "polymer",
+    "core",
+    "usermedia",
+    "stream api",
+    "getusermedia",
+    "web-components"
+  ],
+  "main": "ph-core-usermedia.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/silentHoo/ph-core-usermedia",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "29d98915f8d17ea18243f4c34546c92b0dfbb286"
+  },
+  "_source": "git://github.com/silentHoo/ph-core-usermedia.git",
+  "_target": "^0.1.0",
+  "_originalSource": "silentHoo/ph-core-usermedia"
+}

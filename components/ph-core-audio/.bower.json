@@ -27,7 +27,7 @@
   "_resolution": {
     "type": "version",
     "tag": "v0.1.0",
-    "commit": "9ee47d2a7627be2d40752b4427a715cb73a0158f"
+    "commit": "e3a89e1fa525d70f7f16740a7b48a7b0f23856ce"
   },
   "_source": "git://github.com/silentHoo/ph-core-audio.git",
   "_target": "^0.1.0",

@@ -31,7 +31,11 @@
     "ph-core-video": "silentHoo/ph-core-video#^0.1.0",
     "ph-core-usermedia": "silentHoo/ph-core-usermedia#^0.1.0",
     "ph-core-mediastreamtrack": "silentHoo/ph-core-mediastreamtrack#^0.1.0",
-    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0",
+    "paper-radio-button": "Polymer/paper-radio-button#^0.5",
+    "paper-radio-group": "Polymer/paper-radio-group#^0.5",
+    "paper-button": "Polymer/paper-button#^0.5",
+    "paper-slider": "Polymer/paper-slider#^0.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.0.0"

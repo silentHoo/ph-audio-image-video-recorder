@@ -30,17 +30,21 @@
     "ph-core-video": "silentHoo/ph-core-video#^0.1.0",
     "ph-core-usermedia": "silentHoo/ph-core-usermedia#^0.1.0",
     "ph-core-mediastreamtrack": "silentHoo/ph-core-mediastreamtrack#^0.1.0",
-    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0"
+    "ph-polymer-mixins": "silentHoo/ph-polymer-mixins#^0.1.0",
+    "paper-radio-button": "Polymer/paper-radio-button#^0.5",
+    "paper-radio-group": "Polymer/paper-radio-group#^0.5",
+    "paper-button": "Polymer/paper-button#^0.5",
+    "paper-slider": "Polymer/paper-slider#^0.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.0.0"
   },
   "homepage": "https://github.com/silentHoo/ph-audio-image-video-recorder",
-  "_release": "7bcff0255b",
+  "_release": "375c1605d9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "7bcff0255b258524803c1796d5a25070424819ad"
+    "commit": "375c1605d9b49ff5ce6c3f10126643eeb9c6b7e9"
   },
   "_source": "git://github.com/silentHoo/ph-audio-image-video-recorder.git",
   "_target": "master",

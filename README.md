@@ -55,7 +55,7 @@ See the [component page](http://silentHoo.github.io/ph-audio-image-video-recorde
 
 To give you an overview of the dependencies (resolved by bower), here is a sketch:
 
-![The ph-audio-image-video-recorder dependency graph.](https://github.com/silentHoo/ph-audio-image-video-recorder/raw/master/dependency-graph.svg?raw=true "The ph-audio-image-video-recorder dependency graph.")
+![The ph-audio-image-video-recorder dependency graph.](http://silentHoo.github.io/ph-audio-image-video-recorder/dependency-graph.svg "The ph-audio-image-video-recorder dependency graph.")
 
 ## License
 

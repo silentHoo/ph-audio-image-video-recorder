@@ -1,17 +1,27 @@
 ph-audio-image-video-recorder
 ================
 
-This component can be used to record audio and video from the devices microphones and cameras. It uses only the
-standard APIs **Web Audio API** and **UserMedia API**. It also overlays the live video output with a audio visualization.
+This component gives you the ability to record audio and video **with just HTML standards** and without any additional 
+plugins. This component gives you a (a not yet responsive) GUI interface to...
+
+* record video (GetUserMedia/Stream API + Canvas + Whammy.js),
+* record audio (GetUserMedia/Stream API + Web Audio API + Recorder.js),
+* capture images (GetUserMedia/Stream API + HTMLCanvasElement)
+
+from the available devices the browser makes available through the **MediaStreamTrack API**.
+
+To record audio without any additional plugins the **Web Audio API** is used to build audio nodes. These nodes are also
+used to visualize the microphone input.
 
 Please note that this component is a fancy wrapper around those APIs and provides you with the essential functionality
-for recording video and audio. There are also some filters added, which the user can apply on the video. These filters
-are merged into the video stream. They're only applied via the CSS3 selector `filter`.
-The APIs are at this time (January 2015) not well supported by the majority of the browsers available. Please use with
-caution and don't use it in production :)
+for recording video and audio which is (not yet available) through Web APIs only. So these component uses Whammy.js to
+build a video blob from single canvas frames and Recorder.js to create an audio blob in WAVE format.
 
-Please note that the audio and video stream can not be recorded as one blob record containing audio and video in one
-blob. This is caused by the API limitation. As a result of that a video exists of a recorded video stream and a
+The APIs are (as of January 2015) not well supported by the majority of the browsers available. Please use with
+caution and don't use it in production :) Chrome seems to be the only browser with acceptable performance and support.
+
+The audio and video stream can not be recorded as one blob record containing the audio and video source in one file.
+This is caused by the API limitation. Due to this a video exists of a recorded video stream and a
 separate recorded audio stream. The recorded audio and video will be started at the same time, when the user starts to
 play a recorded video. So it's possible that the video and audio will run out of sync.
 

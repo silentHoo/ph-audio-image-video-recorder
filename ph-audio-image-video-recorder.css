@@ -34,7 +34,7 @@
   width: 640px;
   height: 240px;
   border: 1px grey dashed; }
-  #videoContainer.audio ivx-core-audio {
+  #videoContainer.audio ph-core-audio {
     height: inherit; }
 
 #liveVideo {
